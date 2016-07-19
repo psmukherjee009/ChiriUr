@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>ChiriyaUrr</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2ztx28exqsxh8</unique-id>
+    <saved-with-version>18400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="TiledBackground" sid="7848115364076058">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\background_without_ponies_2___png_by_larsurus-d4hycdt.png" />
+        </object-type>
+        <object-type name="Touch" sid="8176594439167699">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Mouse" sid="6871903182526409">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="3188104611044355">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Score" sid="9364823196594497">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Level" sid="487366183618927">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Instruction" sid="4752180004437078">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button" sid="3961097802949307">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Target1" sid="2881197864410419">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3797858902575618" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\9iRExM6ie.png">
+                        <collision-poly>
+                            <point x="0.176692" y="0.176692" />
+                            <point x="0.5" y="0.0469925" />
+                            <point x="0.697368" y="0.302632" />
+                            <point x="0.930451" y="0.5" />
+                            <point x="0.791353" y="0.791353" />
+                            <point x="0.5" y="0.800752" />
+                            <point x="0.25188" y="0.74812" />
+                            <point x="0.0977444" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target2" sid="7731450375117395">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9047096568675367" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\9iRExM6ie.png">
+                        <collision-poly>
+                            <point x="0.001875" y="0.00333333" />
+                            <point x="0.5" y="0.528889" />
+                            <point x="0.65" y="0.622222" />
+                            <point x="0.84875" y="0.5" />
+                            <point x="0.79875" y="0.642222" />
+                            <point x="0.5" y="0.991111" />
+                            <point x="0.216875" y="0.614444" />
+                            <point x="0.151875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TimeLeft" sid="7959611498730092">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Target3" sid="2574454239572541">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5397292617209207" speed="5">
+                    <frame duration="1" hotspotX="0.501114" hotspotY="0.500924" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\Ancient_animal.png">
+                        <collision-poly>
+                            <point x="0.00222717" y="0.00184843" />
+                            <point x="0.997773" y="0.00184843" />
+                            <point x="0.997773" y="0.998152" />
+                            <point x="0.00222717" y="0.998152" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target4" sid="5207137060163236">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1284357339500621" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\animals-butterfly.png">
+                        <collision-poly>
+                            <point x="0.492188" y="0.492188" />
+                            <point x="0.5" y="0.449219" />
+                            <point x="0.902344" y="0.0976563" />
+                            <point x="0.980469" y="0.5" />
+                            <point x="0.632813" y="0.632813" />
+                            <point x="0.5" y="0.9375" />
+                            <point x="0.246094" y="0.753906" />
+                            <point x="0.0546875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target5" sid="3527358269896077">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4396317412883617" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502513" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\bat_png_by_camelfobia-d5npsu0.png">
+                        <collision-poly>
+                            <point x="0.29" y="0.437186" />
+                            <point x="0.5" y="0.517588" />
+                            <point x="0.796667" y="0.306533" />
+                            <point x="0.713333" y="0.497487" />
+                            <point x="0.706667" y="0.557789" />
+                            <point x="0.5" y="0.79397" />
+                            <point x="0.18" y="0.728643" />
+                            <point x="0.206667" y="0.497487" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target6" sid="1684179159273263">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5537219008613657" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\findingnemo3.png">
+                        <collision-poly>
+                            <point x="0.214844" y="0.214844" />
+                            <point x="0.5" y="0.21875" />
+                            <point x="0.632813" y="0.367188" />
+                            <point x="0.828125" y="0.5" />
+                            <point x="0.625" y="0.625" />
+                            <point x="0.5" y="0.894531" />
+                            <point x="0.28125" y="0.71875" />
+                            <point x="0.1875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="target7" sid="1473208183558635">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="987408291222449" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500442" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\MiL6jMyia.png">
+                        <collision-poly>
+                            <point x="0.04375" y="0.0618921" />
+                            <point x="0.5" y="0.48099" />
+                            <point x="0.664375" y="0.474801" />
+                            <point x="0.691875" y="0.499558" />
+                            <point x="0.843125" y="0.778072" />
+                            <point x="0.5" y="0.917772" />
+                            <point x="0.325" y="0.54023" />
+                            <point x="0.298125" y="0.499558" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target8" sid="426152118855163">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1327530794410434" speed="5">
+                    <frame duration="1" hotspotX="0.502857" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\puppy1.png">
+                        <collision-poly>
+                            <point x="0.114286" y="0.1" />
+                            <point x="0.497143" y="0.07" />
+                            <point x="0.777143" y="0.195" />
+                            <point x="0.965714" y="0.5" />
+                            <point x="0.617143" y="0.665" />
+                            <point x="0.497143" y="0.98" />
+                            <point x="0.0857143" y="0.925" />
+                            <point x="0.125714" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target9" sid="4271607967253263">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9613889897979305" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\R11 - Animal - Giraffe - 007.png">
+                        <collision-poly>
+                            <point x="0.453448" y="0.164375" />
+                            <point x="0.5" y="0.056875" />
+                            <point x="0.817241" y="0.06625" />
+                            <point x="0.87069" y="0.5" />
+                            <point x="0.860345" y="0.949375" />
+                            <point x="0.206897" y="0.925" />
+                            <point x="0.087931" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target10" sid="290404396862292">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8430901350677045" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\swallow_bird.png">
+                        <collision-poly>
+                            <point x="0.095" y="0.095" />
+                            <point x="0.5" y="0.1825" />
+                            <point x="0.6625" y="0.3375" />
+                            <point x="0.7275" y="0.5" />
+                            <point x="0.925" y="0.925" />
+                            <point x="0.5" y="0.96" />
+                            <point x="0.22" y="0.78" />
+                            <point x="0.2375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target11" sid="2435176472743877">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3991966424899965" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\weddell_seal.png">
+                        <collision-poly>
+                            <point x="0.00265957" y="0.0025" />
+                            <point x="0.5" y="0.41" />
+                            <point x="0.539894" y="0.4325" />
+                            <point x="0.720745" y="0.5" />
+                            <point x="0.792553" y="0.805" />
+                            <point x="0.5" y="0.805" />
+                            <point x="0.31117" y="0.7075" />
+                            <point x="0.132979" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target12" sid="6588320466519128">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1332308619998517" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\partha\HTML5\Games\ChiriUr1\images\yio5BqRiE.png">
+                        <collision-poly>
+                            <point x="0.25875" y="0.333871" />
+                            <point x="0.5" y="0.258871" />
+                            <point x="0.745" y="0.329032" />
+                            <point x="0.865" y="0.5" />
+                            <point x="0.598125" y="0.481452" />
+                            <point x="0.5" y="0.492742" />
+                            <point x="0.004375" y="0.994355" />
+                            <point x="0.3075" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Results" sid="6279727239739848">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Restart" sid="5273037959319242">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="EndGame" sid="5149113218373167">
+            <plugin id="Button" />
+        </object-type>
+        <object-type global="1" name="LevelTimeouts" sid="951817842874765">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type global="1" name="LevelMaxAllowed" sid="6132324853569454">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="NextLevel" sid="1624351832981999">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TextBox" sid="6435775092954541">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Debug" sid="1038254619847194">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>ChangeEvents.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="1">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="2" />
+        <global-instance type="Keyboard" uid="3" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

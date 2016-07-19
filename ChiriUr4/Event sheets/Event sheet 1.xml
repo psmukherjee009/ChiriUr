@@ -1,0 +1,1036 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="NextTargetEvent" sid="3664731552378446" static="0" type="number">0</variable>
+        <variable constant="0" name="ChangeEvent" sid="9741631444717045" static="0" type="number">0</variable>
+        <variable constant="0" name="previous_target" sid="5639776862331479" static="0" type="number">0</variable>
+        <variable constant="0" name="current_target" sid="4211064252308968" static="0" type="number">0</variable>
+        <variable comment="Indicates the start of the game" constant="0" name="GameStart" sid="1106262220000311" static="0" type="number">0</variable>
+        <variable constant="0" name="TimeLeft" sid="748523110649876" static="0" type="number">0</variable>
+        <variable constant="0" name="Total" sid="7810549342375974" static="0" type="number">0</variable>
+        <variable comment="The user touched or not" constant="0" name="UserClicked" sid="4855459215241426" static="0" type="number">0</variable>
+        <variable constant="0" name="Level" sid="8905355227418767" static="0" type="number">1</variable>
+        <variable constant="0" name="Score" sid="4198530939833393" static="0" type="number">0</variable>
+        <variable constant="0" name="TimeOut" sid="3672009800528536" static="0" type="number">5</variable>
+        <variable comment="Maximum Number of Levels" constant="0" name="MaxLevels" sid="9414889713093359" static="0" type="number">4</variable>
+        <variable constant="0" name="MaxAllowed" sid="5609074257635335" static="0" type="number">20</variable>
+        <event-block sid="6939393123693254">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="606728625904993" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3218236728419256" type="Score">
+                    <param id="0" name="Text">&quot;Score : &quot; &amp;Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="979775828911599">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2446048196387664" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4848585041366456" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5778975045138732" type="Instruction" />
+                <action id="-9" name="Destroy" sid="1850567967001123" type="Button" />
+                <action id="-3" name="Set position" sid="5552171069509556" type="TimeLeft">
+                    <param id="0" name="X">16</param>
+                    <param id="1" name="Y">440</param>
+                </action>
+                <action id="-9" name="Set value" sid="8737282656432826" type="System">
+                    <param id="0" name="Variable">MaxAllowed</param>
+                    <param id="1" name="Value">LevelMaxAllowed.At(Level)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3103632125140454">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2393281462048293" type="NextLevel" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="1680328868023369" type="System">
+                    <param id="0" name="Variable">Level</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="1191193889915478" type="System">
+                    <param id="0" name="Variable">MaxAllowed</param>
+                    <param id="1" name="Value">LevelMaxAllowed.At(Level)</param>
+                </action>
+                <action id="-9" name="Set value" sid="8648435674687662" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="7351679133508758" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2600595024726593" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="9183100151015077" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3775701904651731" type="System">
+                    <param id="0" name="Variable">Total</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="467237803117309" type="TimeLeft">
+                    <param id="0" name="X">16</param>
+                    <param id="1" name="Y">440</param>
+                </action>
+                <action id="-3" name="Set position" sid="2499640835702261" type="EndGame">
+                    <param id="0" name="X">200</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+                <action id="-3" name="Set position" sid="6037557688390568" type="NextLevel">
+                    <param id="0" name="X">500</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="216954406053797">
+            <conditions>
+                <condition id="7" name="On any key released" sid="4368785012627191" type="Keyboard" />
+                <condition id="-14" name="Compare variable" sid="4772164734959055" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6678892042015699" type="System">
+                    <param id="0" name="Variable">UserClicked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6263897733007826" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3011344763898217">
+            <conditions>
+                <condition id="3" name="On button released" sid="1616546158824091" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9140026980089047" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8186909311813027" type="System">
+                    <param id="0" name="Variable">UserClicked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4977889788796711" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4295092383270637">
+            <conditions>
+                <condition id="14" name="On tap" sid="7432120454765228" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="5742210078485093" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="164228189887457" type="System">
+                    <param id="0" name="Variable">UserClicked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4267860766799369" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8565153208443277">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4377167616572904" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5254663099800435" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="3199932000597786" type="System">
+                    <param id="0" name="Variable">TimeLeft</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="3050757465316312" type="TimeLeft">
+                    <param id="0" name="Text">&quot;Time Left : &quot; &amp;TimeLeft</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9780542972490534">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8202960625414414" type="System">
+                    <param id="0" name="Variable">TimeLeft</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7550435144267278" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8745135629460535" type="System">
+                    <param id="0" name="Variable">TimeLeft</param>
+                    <param id="1" name="Value">TimeOut</param>
+                </action>
+                <action id="0" name="Set text" sid="8834202463162884" type="TimeLeft">
+                    <param id="0" name="Text">&quot;Time Left : &quot; &amp;TimeLeft</param>
+                </action>
+                <action id="-9" name="Set value" sid="9308177397278232" type="System">
+                    <param id="0" name="Variable">UserClicked</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4139759988628146" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1400726124922231">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4261625453039242" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4712239387509195" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="3618630394021571" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="8964679198891327" type="Level">
+                    <param id="0" name="Text">&quot;Level : &quot;&amp;Level</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6068789175006966">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2815540778303486" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6150460490036743" type="System">
+                    <param id="0" name="Variable">UserClicked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Results.At(current_target)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9341120997537832" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="7986897299563547" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4309284110942274">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8916017147396589" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9532405724281152" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Value">current_target</param>
+                </action>
+                <action id="-9" name="Set value" sid="292622911880521" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Value">floor(random(12))+1</param>
+                </action>
+                <action id="-9" name="Set value" sid="486390969913235" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8141906593958106" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="8301583760175636" type="System">
+                    <param id="0" name="Variable">Total</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5654399306014633" type="System">
+                    <param id="0" name="Variable">TimeOut</param>
+                    <param id="1" name="Value">LevelTimeouts.At(Level)</param>
+                </action>
+                <action id="-9" name="Set value" sid="5069230340368148" type="System">
+                    <param id="0" name="Variable">TimeLeft</param>
+                    <param id="1" name="Value">TimeOut</param>
+                </action>
+                <action id="0" name="Set text" sid="6553697523672799" type="TimeLeft">
+                    <param id="0" name="Text">&quot;Time Left : &quot; &amp;TimeLeft</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3229287336217524">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5832089863433747" type="System">
+                    <param id="0" name="Variable">MaxAllowed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Total</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="301660849831383" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3048454377506774" type="System">
+                    <param id="0" name="Variable">MaxLevels</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">Level</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2066064135365518" type="NextLevel">
+                    <param id="0" name="X">500</param>
+                    <param id="1" name="Y">400</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5375303711959349">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9215209256895274" type="System">
+                    <param id="0" name="Variable">MaxAllowed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Total</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7842970916479436" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="948209129305166" type="System">
+                    <param id="0" name="Variable">GameStart</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="2637112802984803" type="EndGame">
+                    <param id="0" name="X">200</param>
+                    <param id="1" name="Y">400</param>
+                </action>
+                <action id="-3" name="Set position" sid="9081102455486938" type="TimeLeft">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+                <action id="-9" name="Set value" sid="6560954841105699" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="517942264199415">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2613919526067087" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3306608408535746" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">previous_target</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6850631617797318" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="3315223352001127" type="System">
+                    <param id="0" name="Variable">NextTargetEvent</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2115190391762423">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6954529803088547" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4782071420827791" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="9327530962675892" type="Target1">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5137434918266615">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9916303302967193" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1885778410022337" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="8325082273228662" type="Target2">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9242086194316503">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9246547182678671" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1894137662566879" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="3826653471061396" type="Target3">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5025712197657432">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5885080263579339" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="800252761785411" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="1928859747868556" type="Target4">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4989284658449335">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3059622150287777" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8581727052229326" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="3952014154896746" type="Target5">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5473842448809742">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3548189407495102" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1792221224468579" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="5986235181553867" type="Target6">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8655254810606489">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2959153808507173" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2425409628295832" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="8464179223556429" type="target7">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9055804103111708">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3316039679199793" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9387497847502424" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="8786839261561668" type="Target8">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2140319546563588">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8495537694377331" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7351884994519361" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="4530394353175629" type="Target9">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1038029163555612">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7964929605223957" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1506457810095139" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="1452336752235482" type="Target10">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4601955294930485">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7667396506358744" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8678937033070526" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="5471549141747989" type="Target11">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5793701838184499">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2704310497534644" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5881820611694993" type="System">
+                    <param id="0" name="Variable">previous_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">12</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="8322182683965858" type="Target12">
+                    <param id="0" name="X">160</param>
+                    <param id="1" name="Y">650</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="532188187637051">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2049862541632336" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9408809360974984" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="4361514914407868" type="Target1">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4096452307568737">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8706500789328687" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8315300640865404" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6042192332251365" type="Target2">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4418217033927898">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7607171769563639" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9830106485592879" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2771997043201672" type="Target3">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9832975524989052">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9936500108366268" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2241210074229184" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="383741894102168" type="Target4">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7447232143195091">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2753504369297084" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8065620898580933" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2944473720087004" type="Target5">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3379438937281496">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2748402088039838" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8584474933176323" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="1044062458473689" type="Target6">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9812444835657141">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="650812272416576" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7024563759740649" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="430146224109201" type="target7">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8874122468221712">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4135778320856785" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3546805523804587" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6398993229253051" type="Target8">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5910160834984939">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8455068438590613" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7087336068490283" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="4702325701753656" type="Target9">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9718327836481888">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1724231195996576" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6192229854591518" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="3565901768460463" type="Target10">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3000526557358325">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1565544468564341" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9552714102133698" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2817253492970368" type="Target11">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5577294587354934">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2711616273639178" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3387602896002611" type="System">
+                    <param id="0" name="Variable">current_target</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">12</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="4978819223974776" type="Target12">
+                    <param id="0" name="X">400</param>
+                    <param id="1" name="Y">200</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3496415313868524">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5246943626350827" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="769979321316861" type="System">
+                    <param id="0" name="Variable">ChangeEvent</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7178583287577729">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3499391578168904" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set at X" sid="647181401897806" type="Results">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="3507132671866471" type="Results">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="577365012730638" type="Results">
+                    <param id="0" name="X">3</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="5072871577225378" type="Results">
+                    <param id="0" name="X">4</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="2286322827236665" type="Results">
+                    <param id="0" name="X">5</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="9408306010079954" type="Results">
+                    <param id="0" name="X">6</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="4735913295857755" type="Results">
+                    <param id="0" name="X">7</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="9243662287645187" type="Results">
+                    <param id="0" name="X">8</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="5498925499542754" type="Results">
+                    <param id="0" name="X">9</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="3848011332296162" type="Results">
+                    <param id="0" name="X">10</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="6827578176882625" type="Results">
+                    <param id="0" name="X">11</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="668684276303202" type="Results">
+                    <param id="0" name="X">12</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="1422746732615569" type="LevelTimeouts">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="2" name="Set at X" sid="4834622393142693" type="LevelTimeouts">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="2" name="Set at X" sid="4992292886447304" type="LevelTimeouts">
+                    <param id="0" name="X">3</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="2" name="Set at X" sid="9777919220645563" type="LevelTimeouts">
+                    <param id="0" name="X">4</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="2" name="Set at X" sid="2745031432290308" type="LevelTimeouts">
+                    <param id="0" name="X">5</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="2" name="Set at X" sid="4880091386955257" type="LevelTimeouts">
+                    <param id="0" name="X">6</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="2" name="Set at X" sid="8131670509728386" type="LevelTimeouts">
+                    <param id="0" name="X">7</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="2" name="Set at X" sid="2424096645644538" type="LevelTimeouts">
+                    <param id="0" name="X">8</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="2" name="Set at X" sid="7409643028223188" type="LevelTimeouts">
+                    <param id="0" name="X">9</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="2" name="Set at X" sid="6689337644780523" type="LevelTimeouts">
+                    <param id="0" name="X">10</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="3263265627572415" type="LevelTimeouts">
+                    <param id="0" name="X">11</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="1631492340947738" type="LevelTimeouts">
+                    <param id="0" name="X">13</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="3900331034457451" type="LevelTimeouts">
+                    <param id="0" name="X">14</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="2" name="Set at X" sid="9851993489932061" type="LevelMaxAllowed">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="2" name="Set at X" sid="3563882465033885" type="LevelMaxAllowed">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="2" name="Set at X" sid="9854684839632634" type="LevelMaxAllowed">
+                    <param id="0" name="X">3</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="2" name="Set at X" sid="2602886724631993" type="LevelMaxAllowed">
+                    <param id="0" name="X">4</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="2" name="Set at X" sid="7502910664488565" type="LevelMaxAllowed">
+                    <param id="0" name="X">5</param>
+                    <param id="1" name="Value">40</param>
+                </action>
+                <action id="2" name="Set at X" sid="6839097098233535" type="LevelMaxAllowed">
+                    <param id="0" name="X">6</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="2" name="Set at X" sid="9417825983215221" type="LevelMaxAllowed">
+                    <param id="0" name="X">7</param>
+                    <param id="1" name="Value">40</param>
+                </action>
+                <action id="2" name="Set at X" sid="8183496882485458" type="LevelMaxAllowed">
+                    <param id="0" name="X">8</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="2" name="Set at X" sid="7585331284640697" type="LevelMaxAllowed">
+                    <param id="0" name="X">9</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="2" name="Set at X" sid="7135981685509958" type="LevelMaxAllowed">
+                    <param id="0" name="X">10</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="2" name="Set at X" sid="8919388961938077" type="LevelMaxAllowed">
+                    <param id="0" name="X">11</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="2" name="Set at X" sid="6472720034615688" type="LevelMaxAllowed">
+                    <param id="0" name="X">13</param>
+                    <param id="1" name="Value">70</param>
+                </action>
+                <action id="2" name="Set at X" sid="3394966602938094" type="LevelMaxAllowed">
+                    <param id="0" name="X">14</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
